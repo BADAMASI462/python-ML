@@ -11,6 +11,9 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 # LIBRARY TO ENCODE STRINGS(CATEGORICAL DATA). LABELENCODER
 from sklearn.preprocessing import LabelEncoder
+# LIBRARY TO SPLIT DATA INTO TRAIN AND TEST
+from sklearn.model_selection import train_test_split
+
 
 # READING OF CSV FILES MUST BE DONE WITH A RAW STRING r IN ORDER TO READ \SLASH OTHER WISE USE /
 
@@ -43,5 +46,14 @@ print(x)
 labelEncoder = LabelEncoder()
 y = labelEncoder.fit_transform(y)
 print(y)
+
+# SPLITTING DATASET INTO TRAIN AND TEST
+# TEXT AND TRAIN VARIABLES MUST BE ARRANGED IN THIS WAY
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2,shuffle=False)
+print(x_train)
+print(x_test)
+print(y_train)
+print(y_test)
+
 
 
